@@ -1,6 +1,7 @@
-{
-  "language": "java",
-  "group": "stable",
-  "dist": "trusty",
-  "os": "linux"
-}
+language: java
+
+before_install:
+ - chmod +x gradlew
+
+jdk:
+  - oraclejdk8
