@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "allergy",
+  "name": "Allergy Mod",
+  "description": "A mod in wich you can have allergies and intolerances",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Herobone"],
+  "credits": "Herobone and some guys with tutorials and open source mods",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
