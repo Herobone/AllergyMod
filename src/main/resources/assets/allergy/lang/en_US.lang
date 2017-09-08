@@ -1,3 +1,8 @@
 itemGroup.allergy=Allergy Mod
 
 tile.microscope.name=Microscope
+
+item.pill.lactase.name=Lactase
+item.pill.gluten.name=Gluten Allergy Pill
+item.pill.egg.name=Egg Allergy Pill
+item.pill.fish.name=Fish Allergy Pill

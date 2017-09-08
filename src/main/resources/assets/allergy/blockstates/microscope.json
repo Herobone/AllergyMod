@@ -1,9 +1,9 @@
 {
     "variants": {
-        "facing=north": { "model": "allergy:microscope" },
-        "facing=south": { "model": "allergy:microscope", "y": 180 },
-        "facing=west":  { "model": "allergy:microscope", "y": 270 },
-        "facing=east":  { "model": "allergy:microscope", "y": 90 },
-        "inventory": {"model": "allergy:microscope"}
+        "facing=north": { "model": "allergy:microscope", "y": 180 },
+        "facing=south": { "model": "allergy:microscope" },
+        "facing=west":  { "model": "allergy:microscope", "y": 90 },
+        "facing=east":  { "model": "allergy:microscope", "y": 270 },
+        "inventory": {"model": "allergy:microscope", "y": 180 }
     }
 }
