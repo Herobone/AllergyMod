@@ -1,6 +1,6 @@
 package com.herobone.allergy.capability;
 
-public class Allergy implements IAllergy {
+public class Intolerance implements IIntolerance {
 	
 	private String list = "null";
 

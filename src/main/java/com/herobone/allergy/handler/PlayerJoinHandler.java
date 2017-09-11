@@ -24,7 +24,7 @@ public class PlayerJoinHandler {
 		
 		String in = allergy.get();
 		
-		if (allergy.get() == null) {
+		if (allergy.get() == "null" || allergy.get() == null) {
 			List<String> stringList = new ArrayList<String>();
 			
 			Random rand = new Random();	
@@ -47,19 +47,13 @@ public class PlayerJoinHandler {
 				}
 			}
 			
-			event.player.addChatComponentMessage(new TextComponentString("Your allergies are: (StringBuilder) " + allergies.toString())); //Directly from StringBuilder
-			
-			event.player.addChatComponentMessage(new TextComponentString("Your allergies are: (In) " + in));
+			event.player.addChatComponentMessage(new TextComponentString("Your allergies are: " + allergies.toString())); //Directly from StringBuilder
 			
 			String sbout = allergies.toString(); //Convert StringBuilder to String
 			allergy.set(sbout);
-			List<String> myList2 = new ArrayList<String>(Arrays.asList(allergy.get().split(" "))); //Do the ArrayList from the StringBuilder-String
-			event.player.addChatComponentMessage(new TextComponentString("Your allergies are: (Capability) " + myList2.toString())); //ArrayList made indirect from String Builder
-			
 		} else {
 			if (in != null) {
 				List<String> allergyList = new ArrayList<>(Arrays.asList(allergy.get().split(" "))); //Do the ArrayList from the StringBuilder-String
-				event.player.addChatComponentMessage(new TextComponentString("Your allergies are: (Capability) " + allergyList.toString())); //ArrayList made indirect from String Builder
 				
 				StringBuilder allergies = new StringBuilder();
 				
@@ -70,9 +64,7 @@ public class PlayerJoinHandler {
 					}
 				}
 				
-				event.player.addChatComponentMessage(new TextComponentString("Your allergies are: (In) " + in));
-				
-				event.player.addChatComponentMessage(new TextComponentString("Your allergies are: (SB) " + allergies.toString())); //Directly from StringBuilder	
+				event.player.addChatComponentMessage(new TextComponentString("Your allergies are: " + allergies.toString())); //Directly from StringBuilder	
 			}
 		}
 	}

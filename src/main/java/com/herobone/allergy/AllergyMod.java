@@ -6,6 +6,9 @@ import org.apache.logging.log4j.Logger;
 import com.herobone.allergy.capability.Allergy;
 import com.herobone.allergy.capability.AllergyStorage;
 import com.herobone.allergy.capability.IAllergy;
+import com.herobone.allergy.capability.IIntolerance;
+import com.herobone.allergy.capability.Intolerance;
+import com.herobone.allergy.capability.IntoleranceStorage;
 import com.herobone.allergy.handler.CapabilityHandler;
 import com.herobone.allergy.handler.CloneHandler;
 import com.herobone.allergy.handler.EatHandler;
@@ -86,6 +89,7 @@ public class AllergyMod
     	smelting.register();
     	
     	CapabilityManager.INSTANCE.register(IAllergy.class, new AllergyStorage(), Allergy.class);
+    	CapabilityManager.INSTANCE.register(IIntolerance.class, new IntoleranceStorage(), Intolerance.class);
 		
     	MinecraftForge.EVENT_BUS.register(new PlayerJoinHandler());
     	MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
