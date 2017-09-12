@@ -8,6 +8,7 @@ import com.herobone.allergy.capability.AllergyProvider;
 import com.herobone.allergy.capability.IAllergy;
 import com.herobone.allergy.capability.IIntolerance;
 import com.herobone.allergy.capability.IntoleranceProvider;
+import com.herobone.allergy.enums.EggEnum;
 import com.herobone.allergy.util.RecipeUtil;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -58,7 +59,8 @@ public class EatHandler {
 							if (RecipeUtil.contains(RecipeUtil.getRecipe(event.food), new ItemStack(Items.EGG)) 
 									|| RecipeUtil.contains(event.food, Items.EGG)
 									|| RecipeUtil.contains(new ItemStack(Items.EGG), event.food)
-									|| event.food.getItem() == Items.EGG) {
+									|| event.food.getItem() == Items.EGG
+									|| EggEnum.contains(event.food.getItem())) {
 								player.attackEntityFrom(DamageSource.generic, 5f);
 								player.addChatMessage(new TextComponentString("Allergy!!"));
 							}

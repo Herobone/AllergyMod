@@ -30,14 +30,15 @@ public class PlayerJoinHandler {
 			List<String> stringList = new ArrayList<String>();
 			
 			Random rand = new Random();	
-			int  n = rand.nextInt(4);
+			int  n1 = rand.nextInt(32);
+			int n = n1 / 8;
 			
 			if (n > 0) {
 				for (int i = 0; i < n; i++) {
 					Random rand1 = new Random();
-					int  n1 = rand1.nextInt(4);
-					if (!stringList.contains(AllergyList.allergys[n1])) {
-						stringList.add(AllergyList.allergys[n1]);
+					int  n2 = rand1.nextInt(4);
+					if (!stringList.contains(AllergyList.allergys[n2])) {
+						stringList.add(AllergyList.allergys[n2]);
 					} else {
 						n++;
 					}
