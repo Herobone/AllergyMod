@@ -30,9 +30,10 @@ public class RecipeUtil {
 		
 		while(iterator.hasNext()) {
 			IRecipe tmpRecipe = iterator.next();
-			
-			if (tmpRecipe.getRecipeOutput().getItem() == in.getItem()) {
-				return tmpRecipe;
+			if (tmpRecipe instanceof ShapedOreRecipe || tmpRecipe instanceof ShapedRecipes || tmpRecipe instanceof ShapelessOreRecipe || tmpRecipe instanceof ShapelessRecipes) {
+				if (tmpRecipe.getRecipeOutput().getItem() == in.getItem()) {
+					return tmpRecipe;
+				}
 			}
 		}
 			
