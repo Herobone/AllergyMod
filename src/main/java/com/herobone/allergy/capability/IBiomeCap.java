@@ -1,6 +1,6 @@
 package com.herobone.allergy.capability;
 
-public interface IIntolerance {
+public interface IBiomeCap {
 	
 	public void set(String list);
 	

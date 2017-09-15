@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.herobone.allergy.AllergyMod;
 import com.herobone.allergy.capability.AllergyProvider;
 import com.herobone.allergy.capability.IAllergy;
 import com.herobone.allergy.capability.IIntolerance;
@@ -20,6 +21,10 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import squeek.applecore.api.food.FoodEvent;
 
 public class EatHandler {
+	
+	public EatHandler() {
+		AllergyMod.LOGGER.info("Eat Handler registered");
+	}
 	
 	@SubscribeEvent
 	public void onFoodEaten(FoodEvent.FoodEaten event)

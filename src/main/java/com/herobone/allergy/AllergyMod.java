@@ -5,14 +5,18 @@ import org.apache.logging.log4j.Logger;
 
 import com.herobone.allergy.capability.Allergy;
 import com.herobone.allergy.capability.AllergyStorage;
+import com.herobone.allergy.capability.BiomeCap;
+import com.herobone.allergy.capability.BiomeCapStorage;
 import com.herobone.allergy.capability.IAllergy;
 import com.herobone.allergy.capability.IIntolerance;
+import com.herobone.allergy.capability.IBiomeCap;
 import com.herobone.allergy.capability.Intolerance;
 import com.herobone.allergy.capability.IntoleranceStorage;
 import com.herobone.allergy.handler.CapabilityHandler;
 import com.herobone.allergy.handler.CloneHandler;
 import com.herobone.allergy.handler.EatHandler;
 import com.herobone.allergy.handler.PlayerJoinHandler;
+import com.herobone.allergy.handler.UpdateHandler;
 import com.herobone.allergy.proxy.CommonProxy;
 import com.herobone.allergy.registry.BlockRegistry;
 import com.herobone.allergy.registry.CraftingRegistry;
@@ -41,7 +45,7 @@ public class AllergyMod
     public static final String MODID = "allergy";
     public static final String VERSION = "1.0";
     public static final String NAME = "Allergy Mod";
-    public static final Logger LOGGER = LogManager.getLogger("AllergyLogger");
+    public static final Logger LOGGER = LogManager.getLogger("Allergy Mod");
     
     @Instance(MODID)
     public static AllergyMod instance = new AllergyMod();
@@ -90,11 +94,13 @@ public class AllergyMod
     	
     	CapabilityManager.INSTANCE.register(IAllergy.class, new AllergyStorage(), Allergy.class);
     	CapabilityManager.INSTANCE.register(IIntolerance.class, new IntoleranceStorage(), Intolerance.class);
+    	CapabilityManager.INSTANCE.register(IBiomeCap.class, new BiomeCapStorage(), BiomeCap.class);
 		
     	MinecraftForge.EVENT_BUS.register(new PlayerJoinHandler());
     	MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
     	MinecraftForge.EVENT_BUS.register(new CloneHandler());
     	MinecraftForge.EVENT_BUS.register(new EatHandler());
+    	MinecraftForge.EVENT_BUS.register(new UpdateHandler());
     	
     	proxy.registerModelBakeryVariants();
     	
